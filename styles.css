@@ -6,7 +6,7 @@
   font-family: "Caveat", cursive;
   color: white;
   text-shadow: 0px 0px 10px #3C6129;
-  font-size: 1.2em;
+  font-size: 30px;
 }
 
 body {
@@ -58,7 +58,13 @@ main {
   position: absolute;
   top: 70px;
   height: 13.2em;
-  padding: 20px 3px;
+  padding: 20px;
+  background-color: rgba(169, 255, 191, 0.3450980392);
+  box-shadow: 1px 1px 23px -1px rgba(32, 98, 26, 0.62);
+  -webkit-box-shadow: 1px 1px 23px -1px rgba(32, 98, 26, 0.62);
+  -moz-box-shadow: 1px 1px 23px -1px rgba(32, 98, 26, 0.62);
+  text-align: justify;
+  text-justify: inter-word;
 }
 .cont--1 {
   left: 280px;
@@ -77,6 +83,8 @@ main {
   background: rgb(105, 69, 40);
   background-image: url("./assets/marco.svg"), linear-gradient(47deg, rgb(105, 69, 40) 46%, rgb(101, 65, 38) 46%);
   background-size: contain;
+  background-repeat: repeat-x;
+  background-position: center;
 }
 .cont::after {
   bottom: -20px;
@@ -89,11 +97,13 @@ main {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: overflow;
+  overflow-y: scroll;
   text-overflow: ellipsis;
   font-size: 1em;
+  scrollbar-color: #f7ba2d #cbf026;
+  scrollbar-width: 8px;
 }
-.texto::-webkit-scrollbar {
+.texto::-webkit-scrollbar, .texto::-moz-sc {
   width: 8px;
 }
 .texto::-webkit-scrollbar-track {
@@ -113,9 +123,9 @@ main {
 
 @media (max-width: 1000px) {
   body {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(55%, rgb(214, 242, 106)), color-stop(55%, rgb(245, 221, 96)));
-    background: linear-gradient(rgb(214, 242, 106) 55%, rgb(245, 221, 96) 55%);
-    height: calc(180vh + 40px);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgb(214, 242, 106)), color-stop(50%, rgb(245, 221, 96)));
+    background: linear-gradient(rgb(214, 242, 106) 50%, rgb(245, 221, 96) 50%);
+    height: calc(200vh + 40px);
     overflow-y: scroll;
   }
   .flor1--2 {
@@ -125,15 +135,59 @@ main {
     display: none;
   }
   .cont--1 {
-    width: calc(55vw - 20px);
+    width: auto;
+    right: 20px;
+    bottom: calc(110vh + 145px);
+    height: auto;
   }
   .cont--2 {
     top: calc(100vh + 100px);
     left: 60px;
-    width: calc(100vw - 260px);
-    height: 9.6em;
+    width: auto;
+    right: 140px;
+    height: auto;
+    bottom: 170px;
   }
   #cont {
     bottom: -80vh;
+  }
+}
+@media (max-width: 600px) {
+  * {
+    font-size: 24px;
+  }
+  .flor1 {
+    width: 140px;
+    height: 140px;
+  }
+  .flor1--2 {
+    top: calc(100vh - 70px);
+  }
+  .cont--1 {
+    left: 160px;
+    bottom: calc(110vh + 75px);
+  }
+  .cont--2 {
+    top: calc(100vh + 100px);
+    right: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .flor1--1 {
+    top: -50px;
+    left: -20px;
+  }
+  .cont--1 {
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    height: 70vh;
+    bottom: calc(110vh + 155px);
+  }
+  .cont--2 {
+    top: calc(110vh + 40px);
+    left: 20px;
+    right: 20px;
+    bottom: 160px;
   }
 }
